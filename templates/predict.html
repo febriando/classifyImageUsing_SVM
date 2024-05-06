@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="float-container bg-white" style="height: 630px;">
+
+    <div style="height: 420px;width: 720px;margin-left: 20%;padding-left: 20px;padding-right: 20px;padding-bottom: 20px;border-radius: 15px;">
+        <h2 class="a">Uploaded Image</h2>
+      <div class="green"><img src="{{ url_for('upload_img', filename=file_name) }}" class="img-fluid" style="border-radius: 15px;"></div>
+      <div style="margin-left: 33%;padding-bottom: -35px;margin-bottom: 40px;height: 60px;">
+        <h3 style="padding-bottom: 40px;margin-bottom: -35px;">Predict : {{label}}</h3>
+        
+        
+      </div>
+      <div style="margin-top: -55px; text-align: justify;">
+        {% if label == "miner" %}
+            <h5 style="padding-bottom: 40px;">{{ label }} adalah penyakit yang disebabkan oleh serangga kecil seperti lalat atau ngengat yang menyebabkan kerusakan dengan cara mengeruk atau "menggali" jaringan daun.
+              Gejalanya adalah jalur transparan atau area terang pada daun akibat aktivitas larva yang makan lapisan epidermis daun.
+              Dampak yang terjadi yaitu Kerusakan berat dapat menyebabkan penurunan kualitas daun dan mengurangi hasil tanaman.</h5>
+        {% endif %}
+        {% if label == "nodisease" %}
+            <h5 style="padding-bottom: 40px;">{{ label }} adalah tidak berpenyakit atau daun sehat</h5>
+        {% endif %}
+        {% if label == "phoma" %}
+            <h5 style="padding-bottom: 40px;">{{ label }} adalah penyakit yang disebabkan oleh jamur dari genus Phoma, salah satu jenis penyakit yang umum pada tanaman kopi.
+              Gejalanya adalah bercak pada daun yang awalnya berwarna hijau gelap, kemudian berkembang menjadi bercak coklat dengan pinggiran yang lebih terang.
+              Dampak yang terjadi yaitu penyakit ini dapat menyebabkan defoliasi (penumpukan daun) dan pada akhirnya mengurangi hasil tanaman.</h5>
+        {% endif %}
+        {% if label == "rust" %}
+            <h5 style="padding-bottom: 40px;">{{ label }} adalah penyakit yang disebabkan oleh jamur dari genus Hemileia, yang menyebabkan penyakit karat pada tanaman kopi.
+              Gejalanya adalah bercak coklat atau oranye pada daun, sering kali disertai dengan penurunan kualitas dan jumlah biji kopi.
+              Dampak yang terjadi yaitu kerugian produksi yang signifikan karena rusaknya daun yang berperan penting dalam fotosintesis.</h5>
+        {% endif %}
+      </div>
+    </div>
+    <br>
+    
+    
+
+    
+  </div>
+  <div class="d-flex justify-content-end">
+  <a href="/" class="btn btn-primary mt-3" style="width: 100px;">Go Back</a>
+</div>
+
+{% endblock %}

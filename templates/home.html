@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./static/assets.css">
+
+  <title>Document</title>
+</head>
+<body>
+
+  <form action="result" method="post" enctype="multipart/form-data">
+    <label for="n_pic">Named your picture:</label>
+    <input type="text" id="n_pic" name="n_pic">
+    <label for="pic">Choose a picture:</label>
+    <input type="file" id="pic" name="pic" accept="image/png, image/jpeg, image/jpg">
+    <input class="btn btn-outline-primary" type="submit" value="Submit">
+  </form>
+
+  <div class="content-container">
+    <h2>{{ name }}</h2>
+    <img src="data:image/png;base64, {{ file }}" style="width: 400px;">
+  </div>
+
+</body>
+</html>
